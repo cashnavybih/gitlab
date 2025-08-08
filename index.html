@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Engineering Edu Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="#" class="logo">NOTESNET</a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#" class="nav-link active" data-filter="all">All</a></li>
+        <li><a href="#" class="nav-link" data-filter="note">Notes</a></li>
+        <li><a href="#" class="nav-link" data-filter="question">Important Questions</a></li>
+        <li><a href="#" class="nav-link" data-filter="pyq">Previous Year Papers</a></li>
+        <li><a href="#" class="nav-link" id="btnBookmarks">Bookmarks</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="toggle navigation">&#9776;</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Welcome to Engineering NOTESNET</h1>
+      <p>Your trusted source for engineering notes, important questions, and previous year exam papers.</p>
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search resources..."
+        aria-label="Search resources"
+        disabled
+      />
+    </section>
+
+    <!-- Branch Selection Section -->
+    <section id="branchSelection" class="branch-selection">
+      <h2>Select Your Branch</h2>
+      <div class="branch-list">
+        <button class="branch-btn" data-branch="CSE">CSE</button>
+        <button class="branch-btn" data-branch="AIML">AIML</button>
+        <button class="branch-btn" data-branch="ECE">ECE</button>
+        <button class="branch-btn" data-branch="EEE">EEE</button>
+        <button class="branch-btn" data-branch="ME">Mechanical</button>
+        <button class="branch-btn" data-branch="CIVIL">Civil</button>
+      </div>
+    </section>
+
+    <!-- Semester Selection Section -->
+    <section id="semesterSelection" class="semester-selection hidden">
+      <h2>Select Semester</h2>
+      <div class="semester-list">
+        <button class="semester-btn" data-semester="1">Semester 1</button>
+        <button class="semester-btn" data-semester="2">Semester 2</button>
+        <button class="semester-btn" data-semester="3">Semester 3</button>
+        <button class="semester-btn" data-semester="4">Semester 4</button>
+        <button class="semester-btn" data-semester="5">Semester 5</button>
+        <button class="semester-btn" data-semester="6">Semester 6</button>
+        <button class="semester-btn" data-semester="7">Semester 7</button>
+        <button class="semester-btn" data-semester="8">Semester 8</button>
+      </div>
+      <button id="btnBackToBranch" class="btn btn-back">Back to Branch Selection</button>
+    </section>
+    <!-- Subject Selection Section -->
+<section id="subjectSelection" class="semester-selection hidden">
+  <h2>Select Subject</h2>
+  <div id="subjectList" class="semester-list"></div>
+  <button id="btnBackToSemester" class="btn btn-back">Back to Semester</button>
+</section>
+
+
+    <!-- Resource List Section -->
+    <section id="resourceList" class="resource-list hidden" aria-live="polite" aria-atomic="true">
+      <!-- Dynamic resources inserted here -->
+    </section>
+
+    <!-- Bookmark Section -->
+    <section id="bookmarkSection" class="bookmark-section hidden">
+      <h2>Your Bookmarked Resources</h2>
+      <button id="btnCloseBookmarks" class="btn-close" aria-label="Close bookmarks">&times;</button>
+      <div id="bookmarkList" class="resource-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 NOTESNET. All rights reserved.</p>
+  </footer>
+
+  <!-- Firebase JS SDK CDN scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+
+  <!-- Your Firebase config -->
+  <script src="firebase-config.js"></script>
+
+  <!-- Main JavaScript logic -->
+  <script src="notes.js"></script>
+</body>
+</html>
